@@ -1,0 +1,232 @@
+import json
+import base64
+import os
+
+def image_to_base64(path):
+    if not os.path.exists(path):
+        return None
+    with open(path, "rb") as image_file:
+        ext = path.split('.')[-1]
+        return f"data:image/{ext};base64," + base64.b64encode(image_file.read()).decode('utf-8')
+
+questions = [
+    {
+        "id": 1,
+        "text": "De acordo com as intenções comunicativas e os recursos linguísticos que se destacam, determinadas funções são atribuídas à linguagem. A função que predomina nesse texto é a conativa, uma vez que ele",
+        "image": image_to_base64("images/page_2_img_1.jpeg"),
+        "options": [
+            {"id": "a", "text": "atua sobre o interlocutor, procurando convencê-lo a realizar sua escolha de maneira consciente."},
+            {"id": "b", "text": "coloca em evidência o canal de comunicação pelo uso das palavras “corrige” e “confirma”."},
+            {"id": "c", "text": "privilegia o texto verbal, de base informativa, em detrimento do texto não verbal."},
+            {"id": "d", "text": "usa a imagem como único recurso para interagir com o público a que se destina."},
+            {"id": "e", "text": "evidencia as emoções do enunciador ao usar a imagem de uma criança."}
+        ],
+        "correctAnswer": "a",
+        "explanation": "A função conativa é caracterizada por uma linguagem persuasiva que mantém o intuito de estabelecer o convencimento. Essa função predomina no texto à medida que o enunciado é elaborado com verbos no imperativo e pronomes de tratamento que evidenciam uma relação dialógica, mantendo o foco da comunicação na mobilização de leitores a favor de uma postura consciente durante as eleições."
+    },
+    {
+        "id": 2,
+        "title": "Aprenda a chamar a polícia",
+        "baseText": "Eu tenho o sono muito leve, e numa noite dessas notei que havia alguém andando sorrateiramente no quintal de casa. Levantei em silêncio e fiquei acompanhando os leves ruídos que vinham lá de fora, até ver uma silhueta passando pela janela do banheiro. Como minha casa era muito segura, com grades nas janelas e trancas internas nas portas, não fiquei muito preocupado, mas era claro que eu não ia deixar um ladrão ali, espiando tranquilamente. Liguei baixinho para a polícia, informei a situação e o meu endereço. Perguntaram-me se o ladrão estava armado ou se já estava no interior da casa. Esclareci que não e disseram-me que não havia nenhuma viatura por perto para ajudar, mas que iriam mandar alguém assim que fosse possível. Um minuto depois liguei de novo e disse com a voz calma: — Oi, eu liguei há pouco porque tinha alguém no meu quintal. Não precisa mais ter pressa. Eu já matei o ladrão com um tiro da escopeta calibre 12, que tenho guardada em casa para estas situações. O tiro fez um estrago danado no cara! Passados menos de três minutos, estavam na minha rua cinco carros da polícia, um helicóptero, uma unidade do resgate, uma equipe de TV e a turma dos direitos humanos, que não perderiam isso por nada neste mundo. Eles prenderam o ladrão em flagrante, que ficava olhando tudo com cara de assombrado. Talvez ele estivesse pensando que aquela era a casa do Comandante da Polícia. No meio do tumulto, um tenente se aproximou de mim e disse: — Pensei que tivesse dito que tinha matado o ladrão. Eu respondi: — Pensei que tivesse dito que não havia nenhuma viatura disponível.\n\nLuis Fernando Veríssimo",
+        "text": "Predomina nesse texto a função da linguagem que se constitui",
+        "options": [
+            {"id": "a", "text": "na organização da mensagem a partir de critérios estéticos que objetivam envolver os leitores na narrativa."},
+            {"id": "b", "text": "no retrato das distintas condutas assumidas pelo referente em situações diversas."},
+            {"id": "c", "text": "no intento de se escrever uma crônica tendo como objeto referenciado a própria crônica."},
+            {"id": "d", "text": "no uso de interjeições que destacam, no texto, o ato comunicacional."},
+            {"id": "e", "text": "no registro de uma experiência pessoal, sob uma visão parcial dos fatos."}
+        ],
+        "correctAnswer": "e",
+        "explanation": "O texto em questão é uma crônica de Luis Fernando Veríssimo, a qual, narrada em primeira pessoa — o que caracteriza a função emotiva da linguagem —, relata as experiências pessoais do emissor sob um ponto de vista individual, com a intenção de gerar humor a partir de uma situação inusitada vivenciada."
+    },
+    {
+        "id": 3,
+        "baseText": "Deficientes visuais já podem ir a algumas salas de cinema e teatros para curtir, em maior intensidade, as atrações em cartaz. Quem ajuda na tarefa é o aplicativo Whatscine, recém-chegado ao Brasil e disponível para os sistemas operacionais iOS (Apple) ou Android (Google). Ao ser conectado à rede wi-fi de cinemas e teatros, o app sincroniza um áudio que descreve o que ocorre na tela ou no palco com o espetáculo em andamento: o usuário, então, pode ouvir a narração em seu celular.\n\nO programa foi desenvolvido por pesquisadores da Universidade Carlos III, em Madri. “Na Espanha, 200 salas de cinema já oferecem o recurso e filmes de grandes estúdios já são exibidos com o recurso do Whatscine!”, diz o brasileiro Luis Mauch, que trouxe a tecnologia para o país. “No Brasil, já fechamos parceria com a São Paulo Companhia de Dança para adaptar os espetáculos deles! Isso já é um avanço. Concorda?”",
+        "text": "Por ser múltipla e apresentar peculiaridades de acordo com a intenção do emissor, a linguagem apresenta funções diferentes. Nesse fragmento, predomina a função referencial da linguagem, porque há a presença de elementos que",
+        "options": [
+            {"id": "a", "text": "buscam convencer o leitor, incitando o uso do aplicativo."},
+            {"id": "b", "text": "definem o aplicativo, revelando o ponto de vista da autora."},
+            {"id": "c", "head": "evidenciam a subjetividade, explorando a entonação emotiva."},
+            {"id": "d", "text": "expõem dados sobre o aplicativo, usando linguagem denotativa."},
+            {"id": "e", "text": "objetivam manter um diálogo com o leitor, recorrendo a uma indagação."}
+        ],
+        "correctAnswer": "d",
+        "explanation": "A função referencial da linguagem predomina em textos que transmitem uma informação objetiva, mediante exposição de dados da realidade. Essa é a característica fundamental do fragmento acima, considerando o caráter dissertativo em torno da disponibilidade de um novo aplicativo que auxiliará pessoas com deficiência, a partir de uma linguagem literal e da articulação objetiva das ideias."
+    },
+    {
+        "id": 4,
+        "baseText": "“Mesmo quando tudo parece desabar, cabe a mim decidir entre rir ou chorar, ir ou ficar, desistir ou lutar, porque descobri, no caminho incerto da vida, que o mais importante é o decidir.”\n\nCora Coralina",
+        "text": "No texto, a função emotiva da linguagem pode ser identificada por meio da característica indicada em",
+        "options": [
+            {"id": "a", "text": "objetividade da informação transmitida, ausentando-se juízo de valor sobre o tema."},
+            {"id": "b", "text": "emprego de formas verbais no pretérito, mantendo uma relação comparativa entre o eu passado e o eu presente."},
+            {"id": "c", "text": "evidência do código reproduzido por meio dele próprio, esclarecendo o assunto principal."},
+            {"id": "d", "text": "mensagem centrada no emissor, deixando claros seus anseios e suas percepções sobre a própria vida."},
+            {"id": "e", "text": "presença de marcas de interlocução, legitimando o canal de comunicação."}
+        ],
+        "correctAnswer": "d",
+        "explanation": "Dotada de expressividade e de subjetividade, a frase dita por Cora Coralina é de função emotiva, pois deixa claro o envolvimento pessoal do emissor. Isso pode ser percebido pelo emprego de pronomes pessoais que fazem referência a si própria, bem como no relato de percepções pessoais sobre a vida."
+    },
+    {
+        "id": 5,
+        "baseText": "TEXTO I\n\nFundamentam-se as regras da Gramática Normativa nas obras dos grandes escritores, em cuja linguagem as classes ilustradas põem o seu ideal de perfeição, porque nela é que se espelha o que o uso idiomático estabilizou e consagrou.\n\nLIMA, C. H. R. Gramática normativa da língua portuguesa, Rio de Janeiro José Olympio, 1989\n\nTEXTO II\n\nGosto de dizer. Direi melhor: gosto de palavrar. As palavras são para mim corpos tocáveis, sereias visíveis, sensualidades incorporadas. Talvez porque a sensualidade real não tem para mim interesse de nenhuma espécie — nem sequer mental ou de sonho —, transmudou-se-me o desejo para aquilo que em mim cria ritmos verbais, ou os escuta de outros. Estremeço se dizem bem. Tal página de Fialho, tal página de Chateaubriand, fazem formigar toda a minha vida em todas as veias, fazem-me raivar tremulamente quieto de um prazer inatingível que estou tendo. Tal página, até, de Vieira, na sua fria perfeição de engenharia sintáctica, me faz tremer como um ramo ao vento, num delírio passivo de coisa movida.\n\nPESSOA, F. O livro do desassossego. São Paulo: Brasiliense, 1986.",
+        "text": "A linguagem cumpre diferentes funções no processo de comunicação. A função que predomina nos textos I e II",
+        "options": [
+            {"id": "a", "text": "destaca o “como” se elabora a mensagem, considerando-se a seleção, combinação e sonoridade do texto."},
+            {"id": "b", "text": "coloca o foco no “com o que” se constrói a mensagem, sendo o código utilizado o seu próprio objeto."},
+            {"id": "c", "text": "focaliza o “quem” produz a mensagem, mostrando seu posicionamento e suas impressões pessoais."},
+            {"id": "d", "text": "orienta-se no “para quem” se dirige a mensagem, estimulando a mudança de seu comportamento."},
+            {"id": "e", "text": "enfatiza sobre “o quê” versa a mensagem, apresentada com palavras precisas e objetivas."}
+        ],
+        "correctAnswer": "b",
+        "explanation": "No texto I, Rocha Lima discorre sobre a gramática normativa numa perspectiva denotativa e impessoal; no texto II, Fernando Pessoa explora um discurso subjetivo e de tom poético ao fazer referência ao valor dado pelo eu-lírico às palavras. A intersecção entre os dois textos se dá à medida que ambos são construídos em referência à língua portuguesa, de modo a evidenciar uma referência do texto à própria composição. Tem-se, assim, a função metalinguística predominante, que se estrutura com o foco dado ao elemento da comunicação com que se constrói a mensagem: o próprio código."
+    },
+    {
+        "id": 6,
+        "title": "O Brasil (descrição física e política)",
+        "baseText": "O Brasil é um país maior do que os menores e menor do que os maiores. É um país grande, porque, medida sua extensão, verifica-se que não é pequeno. Divide-se em três zonas climatéricas absolutamente distintas: a primeira, a segunda e a terceira. Sendo que a segunda fica entre a primeira e a terceira. Há muitas diferenças entre as várias regiões geográficas do país, mas a mais importante é a principal. Na agricultura faz-se exclusivamente o cultivo de produtos vegetais, enquanto a pecuária especializa-se na criação de gado. A população é toda baseada no elemento humano, sendo que as pessoas não nascidas no país são, sem exceção, estrangeiras. Tão privilegiada é hoje, enfim, a situação do país que os cientistas procuram apenas descobrir o que não está descoberto, deixando para a indústria tudo o que já foi aprovado como industrializável e para o comércio tudo o que é vendável. É, enfim, o país do futuro, e este se aproxima a cada dia que passa.\n\nFERNANDES, M. In: ANTUNES, I. Língua, texto e ensino: outra escola possível. São Paulo: Parábola, 2009 (adaptado).",
+        "text": "Em relação ao propósito comunicativo anunciado no título do texto, esse gênero promove uma quebra de expectativa ao",
+        "options": [
+            {"id": "a", "text": "abordar aspectos físicos e políticos do país de maneira impessoal."},
+            {"id": "b", "text": "apresentar argumentos plausíveis sobre a estrutura geopolítica do Brasil."},
+            {"id": "c", "text": "tratar aspectos físicos e políticos do país por meio de abordagem cômica."},
+            {"id": "d", "text": "trazer informações relevantes sobre os aspectos físicos e políticos do Brasil."},
+            {"id": "e", "text": "propor uma descrição sucinta sobre a organização física e política do Brasil."}
+        ],
+        "correctAnswer": "c",
+        "explanation": "O texto é uma crônica de caráter humorístico na medida em que é construído a partir de dados que contradizem o conteúdo pressuposto, incitando, assim, a quebra de expectativa. É possível comprovar essa afirmação ao constatar que, enquanto o título indicia um texto dissertativo acerca de aspectos físicos e políticos do território brasileiro, o desenvolvimento limita-se à obviedade dos fatos: a segunda zona climática fica entre a primeira e a terceira; na agricultura, faz-se exclusivamente o cultivo de vegetais, gerando comicidade."
+    },
+    {
+        "id": 7,
+        "title": "Machado de Assis",
+        "baseText": "Joaquim Maria Machado de Assis foi um dos maiores escritores brasileiros, tendo responsabilidade pela criação da Academia Brasileira de Letras, onde foi presidente por dez anos. Machado de Assis também foi o responsável por implantar no Brasil o Realismo na literatura por meio da observação da sociedade carioca da época em que baseava suas obras.\n\nAlém de escritor, Machado também teve inúmeros cargos públicos, chegando até mesmo a ser diretor da Diretoria do Comércio, na Secretaria de Estado da Agricultura, Comércio e Obras Públicas do Brasil. Suas principais obras são hoje clássicos da literatura brasileira, tais como “Memórias Póstumas de Brás Cubas” e “Dom Casmurro”.",
+        "text": "A análise dos elementos constitutivos desse texto, como forma de composição, tema e estilo de linguagem, permite identificá-lo como",
+        "options": [
+            {"id": "a", "text": "científico, pois investiga informações sobre a vida de Machado de Assis."},
+            {"id": "b", "text": "jornalístico, pois dá a conhecer fatos relacionados ao autor brasileiro."},
+            {"id": "c", "text": "didático, já que explica a importância das contribuições de Machado de Assis."},
+            {"id": "d", "text": "ensaístico, já que discute fatos da vida do escritor."},
+            {"id": "e", "text": "biográfico, pois narra a trajetória de vida de Machado de Assis."}
+        ],
+        "correctAnswer": "e",
+        "explanation": "Trata-se de um texto biográfico, que se estrutura em relatos cronológicos sobre a vida da pessoa biografada. Esse gênero textual tem caráter descritivo-narrativo e a função de compartilhar as experiências de uma figura de relevância a partir de um relato específico de sua vivência pessoal, familiar, educacional etc."
+    },
+    {
+        "id": 8,
+        "title": "O livro It – A Coisa, de Stephen King",
+        "baseText": "Durante as férias escolares de 1958, em Derry, pacata cidadezinha do Maine, Bill, Richie, Stan, Mike, Eddie, Ben e Beverly aprenderam o real sentido da amizade, do amor, da confiança e... do medo. O mais profundo e tenebroso medo. Naquele verão, eles enfrentaram pela primeira vez a Coisa, um ser sobrenatural e maligno, que deixou terríveis marcas de sangue em Derry. Quase trinta anos depois, os amigos voltam a se encontrar. Uma nova onda de terror tomou a pequena cidade. Mike Hanlon, o único que permanece em Derry, dá o sinal. Precisam unir forças novamente. A Coisa volta a atacar e eles devem cumprir a promessa selada com sangue que fizeram quando crianças. Só eles têm a chave do enigma. Só eles sabem o que se esconde nas entranhas de Derry. O tempo é curto, mas somente eles podem vencer a Coisa. Em It – A Coisa, clássico de Stephen King em nova edição, os amigos irão até o fim, mesmo que isso signifique ultrapassar os próprios limites.",
+        "text": "Relacionando-se os elementos que compõem esse texto, depreende-se que sua função social consiste em levar o leitor a:",
+        "options": [
+            {"id": "a", "text": "compreender a história vivenciada por amigos na cidade de Derry."},
+            {"id": "b", "text": "interpretar a obra com base em uma descrição detalhada."},
+            {"id": "c", "text": "avaliar a publicação com base em uma síntese crítica."},
+            {"id": "d", "text": "adquirir a obra apresentada no site da livraria."},
+            {"id": "e", "text": "argumentar em favor da obra resumida."}
+        ],
+        "correctAnswer": "d",
+        "explanation": "A função social do gênero sinopse é apresentar uma descrição sintética do objeto cultural, de modo a despertar o interesse de leitores pelo conteúdo, sem que haja indícios de juízo de valor. Considerando que o texto é vinculado à Livraria Cultura (para isso, basta se analisar a perigrafia), entende-se que a circulação dessa publicação visa despertar a curiosidade e atrair possíveis compradores ao site em questão."
+    },
+    {
+        "id": 9,
+        "title": "Assum preto - Luiz Gonzaga",
+        "baseText": "Tudo em vorta é só beleza\nSol de abril e a mata em frô\nMas Assum Preto, cego dos óio\nNum vendo a luz, ai, canta de dor\n\nMas Assum Preto, cego dos óio\nNum vendo a luz, ai, canta de dor\n\nTarvez por ignorança\nOu mardade das pió\nFuraro os óio do Assum Preto\nPra ele assim, ai, cantá mió\n\nFuraro os óio do Assum Preto\nPra ele assim, ai, cantá mió\n\nAssum Preto veve sorto\nMas num pode avuá\nMil vez a sina de uma gaiola\nDesde que o céu, ai, pudesse oiá\n\nMil vez a sina de uma gaiola\nDesde que o céu, ai, pudesse oiá\n\nAssum Preto, o meu cantar\nÉ tão triste como o teu\nTambém roubaro o meu amor\nQue era a luz, ai, dos óios meus\n\nTambém roubaro o meu amor\nQue era a luz, ai, dos óios meus",
+        "text": "A respeito da tipologia textual e da linguagem utilizadas nesse fragmento, é correto afirmar que se trata de um texto",
+        "options": [
+            {"id": "a", "text": "descritivo, em que a variante linguística ocorre no nível sintático."},
+            {"id": "b", "text": "injuntivo, destacando o uso de linguagem informal."},
+            {"id": "c", "text": "descritivo, com realce ao uso da linguagem conotativa."},
+            {"id": "d", "text": "narrativo, com predomínio de linguagem coloquial."},
+            {"id": "e", "text": "expositivo, em que ressai uma variedade de linguagem regionalista."}
+        ],
+        "correctAnswer": "d",
+        "explanation": "Luiz Gonzaga, na música “Assum Preto”, relata o sofrimento de um pássaro cujos olhos foram mutilados para que passasse a cantar melhor. O texto é, portanto, de caráter narrativo, marcado por uma variedade linguística coloquial que caracteriza a identidade do nordestino brasileiro, percebida, por exemplo, em “oiá”, em vez de “olhar” e “roubaro”, em vez de “roubaram”."
+    },
+    {
+        "id": 10,
+        "title": "Mulher tem coração clinicamente partido após morte de cachorro",
+        "baseText": "Como explica o The New England Journal of Medicine, a paciente, chamada Joanie Simpson, tinha sinais de infarto, como dores no peito e pressão alta, e apresentava problemas nas artérias coronárias. Ao fazerem um ecocardiograma, os médicos encontraram o problema: cardiomiopatia de Takotsubo, conhecida como síndrome do coração partido.\n\nEssa condição médica tipicamente acontece com mulheres em fase pós-menstrual e pode ser precedida por um evento muito estressante ou emotivo. Nesses casos, o coração apresenta um movimento discinético transitório da parede anterior do ventrículo esquerdo, com acentuação da cinética da base ventricular, de acordo com um artigo médico brasileiro que relata um caso semelhante. Simpson foi encaminhada para casa após dois dias e passou a tomar medicamentos regulares.\n\nAo Washington Post, ela contou que estava quase inconsolável após a perda do seu animal de estimação, um cão da raça yorkshire terrier. Recuperada após cerca de um ano, ela diz que não abrirá mão de ter um animal de estimação porque aprecia a companhia e o amor que os cachorros dão aos humanos. O caso aconteceu em Houston, nos Estados Unidos.",
+        "text": "Pelas características do texto lido, que trata das consequências da perda de um animal de estimação, considera-se que ele se enquadra no gênero",
+        "options": [
+            {"id": "a", "text": "conto, pois exibe a história de vida de Joanie Simpson."},
+            {"id": "b", "text": "depoimento, pois expõe o sofrimento da dona do animal."},
+            {"id": "c", "text": "reportagem, pois discute cientificamente a cardiomiopatia."},
+            {"id": "d", "text": "relato, pois narra um fato estressante vivido pela paciente."},
+            {"id": "e", "text": "notícia, pois divulga fatos sobre a síndrome do coração partido."}
+        ],
+        "correctAnswer": "e",
+        "explanation": "Trata-se de um texto informativo sobre um evento real (o desencadeamento da síndrome do coração partido), veiculado por um meio de comunicação jornalístico (revista Exame): uma notícia. É impessoal, sintético e apresenta descrições detalhadas sobre um fato realístico, atual e cotidiano."
+    },
+    {
+        "id": 11,
+        "baseText": "TEXTO I\n\nA dupla Claudinho e Buchecha foi formada por dois amigos de infância que eram vizinhos na comunidade do Salgueiro. Os cantores iniciaram sua carreira artística no início dos anos 1990, cantando em bailes funk de São Gonçalo (RJ), e fizeram muito sucesso com a música Fico assim sem você, em 2002. Buchecha trabalhou por um bom tempo como office boy e Claudinho atuou como peão de obras e vendedor ambulante.\n\nTEXTO II\n\nOuvi a canção Fico assim sem você no rádio e me apaixonei instantaneamente. Quando isso acontece comigo, não posso fazer nada a não ser trazer a música pra perto de mim e então começar a cantar e tocar sem parar, até que ela se torne minha. A canção caiu como uma luva no repertório do disco e eu contava as horas pra poder gravá-la.",
+        "text": "A letra da canção Fico assim sem você, que circulava em meios populares, veiculada pela grande mídia, começou a integrar o repertório de crianças cujas famílias tinham o hábito de ouvir o que é conhecido como MPB. O novo público que passou a conhecer e apreciar essa música revela a;",
+        "options": [
+            {"id": "a", "text": "legitimação de certas músicas quando interpretadas por artistas de uma parcela específica da sociedade."},
+            {"id": "b", "text": "admiração pelas composições musicais realizadas por sujeitos com pouca formação acadêmica."},
+            {"id": "c", "text": "necessidade que músicos consagrados têm de buscar novos repertórios nas periferias."},
+            {"id": "d", "text": "importância dos meios de comunicação de massa na formação da música brasileira."},
+            {"id": "e", "text": "função que a indústria fonográfica ocupa em resgatar músicas da periferia."}
+        ],
+        "correctAnswer": "a",
+        "explanation": "Os dois textos destacam o sucesso promovido pela música “Fico assim sem você”, por um lado, cantada na voz de uma dupla vinda da periferia brasileira, que se destacou no ritmo do funk no Brasil, e, por outro, na de Adriana Calcanhotto, reconhecida artista da MPB. Ao se destacar, no enunciado da questão, que o encantamento pela música deu-se sobretudo entre o grupo que se interessava pelo ritmo da cantora, nota-se a validação da canção quando interpretada por um grupo que compõe certa elite brasileira e o desconhecimento dela, quando associada à comunidade marginalizada."
+    },
+    {
+        "id": 12,
+        "text": "Tem-se como interdiscursividade a concepção de que os discursos se relacionam a outros discursos. Dessa forma, são tecidos entre si, seja pelos já ditos, em um dado lugar e momento histórico, seja por aqueles a serem ainda produzidos. A esse respeito, pode-se dizer que a tira de Mafalda;",
+        "image": image_to_base64("images/page_8_img_1.jpeg"),
+        "options": [
+            {"id": "a", "text": "faz referência aos discursos de ódio reproduzidos na sociedade que inferiorizam os cidadãos em condição de vulnerabilidade social."},
+            {"id": "b", "text": "confirma a ideia de que o fenômeno da invisibilidade atinge tão somente aqueles que estão à margem da sociedade."},
+            {"id": "c", "text": "denuncia a condição lastimável a que pessoas em situação de rua estão submetidas, como a fome e o frio."},
+            {"id": "d", "text": "dialoga com a postura passiva de parcela social que permanece em uma zona de conforto, alheia aos problemas urbanos."},
+            {"id": "e", "text": "reproduz a expectativa do povo de que políticas públicas devem ser tomadas imediatamente."}
+        ],
+        "correctAnswer": "d",
+        "explanation": "A tira de Mafalda dialoga com o discurso de passividade social à medida que revela uma conduta de alheamento comum reproduzida na fala de Suzanita. Afinal, ainda que os problemas urbanos, como a situação de rua das pessoas, conforme ilustrado, sensibilizem uma parcela social, a resolução desses conflitos não tem sido efetiva, considerando o ideal de que “varrer para debaixo do tapete” todos os problemas que maculam as cidades parece ser uma solução mais eficiente."
+    },
+    {
+        "id": 13,
+        "text": "Na criação do texto, o chargista Iotti usa criativamente um intertexto: os traços reconstroem uma cena de Guernica, painel de Pablo Picasso que retrata os horrores e a destruição provocados pelo bombardeio a uma pequena cidade da Espanha. Na charge, publicada no período de carnaval, recebe destaque a figura do carro, elemento introduzido por Iotti no intertexto. Além dessa figura, a linguagem verbal contribui para estabelecer um diálogo entre a obra de Picasso e a charge, ao explorar;",
+        "image": image_to_base64("images/page_9_img_1.jpeg"),
+        "options": [
+            {"id": "a", "text": "uma referência ao contexto, “trânsito no feriadão”, esclarecendo-se o referente tanto do texto de Iotti quanto da obra de Picasso."},
+            {"id": "b", "text": "uma referência ao tempo presente, com o emprego da forma verbal “é”, evidenciando-se a atualidade do tema abordado tanto pelo pintor espanhol quanto pelo chargista brasileiro."},
+            {"id": "c", "text": "um termo pejorativo, “trânsito”, reforçando-se a imagem negativa de mundo caótico presente tanto em Guernica quanto na charge."},
+            {"id": "d", "text": "uma referência temporal, “sempre”, referindo-se à permanência de tragédias retratadas tanto em Guernica quanto na charge."},
+            {"id": "e", "text": "uma expressão polissêmica, “quadro dramático”, remetendo-se tanto à obra pictórica quanto ao contexto do trânsito brasileiro."}
+        ],
+        "correctAnswer": "e",
+        "explanation": "O aspecto verbal da charge (“O trânsito no feriadão é sempre um quadro dramático”) dialoga com a obra de Picasso uma vez que explora a polissemia da expressão “quadro dramático”. Na obra original, a expressão pode ser compreendida de forma literal, enquanto a releitura da pintura induz uma reflexão figurativa acerca de uma situação embaraçosa, problemática: o trânsito caótico no período de feriados."
+    },
+    {
+        "id": 14,
+        "text": "Os sujeitos das falas do primeiro e segundo quadrinho são, respectivamente:",
+        "image": image_to_base64("images/page_10_img_1.jpeg"),
+        "options": [
+            {"id": "a", "text": "sujeito elíptico e sujeito indeterminado."},
+            {"id": "b", "text": "sujeito indeterminado e sujeito elíptico."},
+            {"id": "c", "text": "sujeito simples e sujeito elíptico."},
+            {"id": "d", "text": "sujeito composto e sujeito indeterminado."},
+            {"id": "e", "text": "sujeito inexistente e sujeito elíptico."}
+        ],
+        "correctAnswer": "a",
+        "explanation": "No primeiro quadrinho, na fala de Calvin, “Tô com fome. Posso fazer um lanche?”, o sujeito é elíptico (eu Tô com fome. eu Posso fazer um lanche?). No segundo quadrinho, na fala da mãe de Calvin, “Claro, sirva-se”, o sujeito é indeterminado, pois o verbo “servir” está na terceira pessoa do singular acrescido do pronome se."
+    },
+    {
+        "id": 15,
+        "baseText": "“O idealismo supõe a imaginação entusiasta que se adianta à realidade no encalço da perfeição.” (in “Perspectivas”)",
+        "text": "O sujeito de supõe é:",
+        "options": [
+            {"id": "a", "text": "a imaginação entusiasta."},
+            {"id": "b", "text": "o idealismo."},
+            {"id": "c", "text": "imaginação."},
+            {"id": "d", "text": "entusiasta."},
+            {"id": "e", "text": "perfeição."}
+        ],
+        "correctAnswer": "b",
+        "explanation": "Sujeito simples: o idealismo. Quem supõe? → o idealismo."
+    }
+]
+
+with open("exam_data.json", "w", encoding="utf-8") as f:
+    json.dump(questions, f, ensure_ascii=False, indent=2)
